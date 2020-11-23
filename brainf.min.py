@@ -1,4 +1,5 @@
 def C(c):
+ c=''.join(x for x in c if x in'+-><[].;')
  s=[];r=[]
  for i,g in enumerate(c):
   if g in'.,+-<>':r+=[g]
@@ -41,3 +42,8 @@ def run_file(fn):
   with open(fn, 'r') as f:
     x = f.read()
     run(x)
+
+import sys
+args = sys.argv
+fn = args[-1]
+run_file(fn)
